@@ -36,8 +36,10 @@ CUDA_VISIBLE_DEVICES=1 python CNNfeatures.py --database=CVD2014 --frame_batch_si
 CUDA_VISIBLE_DEVICES=0 python CNNfeatures.py --database=LIVE-Qualcomm --frame_batch_size=8
 CUDA_VISIBLE_DEVICES=1 python CNNfeatures.py --database=LIVE-VQC --frame_batch_size=8
 # Training, intra-dataset evaluation, for example 
+chmod 777 job.sh
 ./job.sh -g 0 -d K -d C -d L > KCL-mixed-exp-0-10-1e-4-32-40.log 2>&1 &
 # Cross-dataset evaluation (after training), for example
+chmod 777 cross_job.sh
 ./cross_job.sh -g 1 -d K -d C -d L -c N -l mixed > KCLtrained-crossN-mixed-exp-0-10.log 2>&1 &
 ```
 
