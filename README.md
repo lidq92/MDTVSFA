@@ -4,7 +4,7 @@
 ## Description
 MDTVSFA code for the following paper:
 
-- Dingquan Li, Tingting Jiang, and Ming Jiang. [Unified Quality Assessment of In-the-Wild Videos with Mixed Datasets Training](). International Journal of Computer Vision (IJCV), 2020. [[arxiv version]]()
+- Dingquan Li, Tingting Jiang, and Ming Jiang. [Unified Quality Assessment of In-the-Wild Videos with Mixed Datasets Training](). International Journal of Computer Vision (IJCV) Special Issue on Computer Vision in the Wild, 2020. [[arxiv version]](https://arxiv.org/abs/2011.04263)
 ![Framework](Framework.png)
 
 ## How to?
