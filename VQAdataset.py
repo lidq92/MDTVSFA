@@ -87,13 +87,13 @@ def get_data_loaders(args):
     val_loader, test_loader = dict(), dict()
     for dataset in args.datasets['val']:
         val_dataset = VQADataset(args, [dataset], 'val')
-        scale[dataset] = val_dataset.scale[dataset]
         val_loader[dataset] = torch.utils.data.DataLoader(val_dataset)
 
     for dataset in args.datasets['test']:
         test_dataset = VQADataset(args, [dataset], 'test')
-        scale[dataset] = test_dataset.scale[dataset]
-        m[dataset] = test_dataset.m[dataset]
+        if dataset not in args.datasets['train']:
+            scale[dataset] = test_dataset.scale[dataset]
+            m[dataset] = test_dataset.m[dataset]
         test_loader[dataset] = torch.utils.data.DataLoader(test_dataset)
 
     return train_loader, val_loader, test_loader, scale, m
