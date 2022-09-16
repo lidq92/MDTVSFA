@@ -15,7 +15,6 @@ import h5py
 import numpy as np
 import random
 import time
-import os
 
 
 class VideoDataset(Dataset):
@@ -205,6 +204,4 @@ if __name__ == "__main__":
         np.save(features_dir + str(i) + '_score', current_data['score'])
         end = time.time()
         print('{} seconds'.format(end-start))
-        # time.sleep(2)
-        # os.system('sync | echo 920517 | sudo -S sysctl -w vm.drop_caches=3')
     print(max_len)
